@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Локальный файловый сервер</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        .upload-form { margin-bottom: 30px; }
+        .file-list { list-style: none; padding: 0; }
+        .file-item { margin: 10px 0; padding: 10px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Мой локальный файловый сервер</h1>
+
+        <form class="upload-form" method="post" enctype="multipart/form-data" action="/upload">
+            <input type="file" name="file">
+            <input type="submit" value="Загрузить">
+        </form>
+
+        <h2>Загруженные файлы:</h2>
+        <ul class="file-list">
+            {% for file in files %}
+                <li class="file-item">
+                    {{ file }}
+                    <a href="/download/{{ file }}">(скачать)</a>
+                </li>
+            {% endfor %}
+        </ul>
+    </div>
+</body>
+</html>
