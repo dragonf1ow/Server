@@ -8,11 +8,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>Мой сервер</h1>
+        <h1>Домашний сервер</h1>
 
         <form class="upload-form" method="post" enctype="multipart/form-data" action="/upload">
-            <input type="file" name="file">
-            <input type="submit" value="Загрузить">
+            <label class="custom-file-upload">
+                Выбрать файл
+                <input type="file" name="file" id="file-input">
+            </label>
+            <input type="submit" value="Загрузить" class="upload-button">
         </form>
 
         <h2>Загруженные файлы:</h2>
